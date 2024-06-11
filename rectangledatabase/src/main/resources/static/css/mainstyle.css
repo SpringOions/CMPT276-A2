@@ -1,0 +1,11 @@
+:root{
+    --background: #F8FEF0;
+    --light-green: #DDE5B6;
+    --green: #ADC178;
+    --light-brown: #A98467;
+    --dark-brown: #420C1C;
+}
+
+*{
+    font-family: cursive;
+}
