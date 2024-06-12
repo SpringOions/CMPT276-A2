@@ -1,11 +1,39 @@
 :root{
-    --background: #F8FEF0;
     --light-green: #DDE5B6;
     --green: #ADC178;
     --light-brown: #A98467;
     --dark-brown: #420C1C;
 }
 
+body{
+    background-color:#F8FEF0 !important;
+}
+
 *{
-    font-family: cursive;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.container{
+    background-color: var(--light-green);
+    border-radius: 15px;
+    border: 5px dashed var(--green);
+    padding: 8px;
+}
+
+h1{
+    color:#420C1C !important;
+}
+
+th{
+    background-color: var(--light-brown) !important;
+    font-size: 30px;
+}
+
+th, td{
+    padding: 6px 20px 6px 8px !important;
+}
+
+table{
+    border-color: var(--dark-brown) !important;
+    
 }
