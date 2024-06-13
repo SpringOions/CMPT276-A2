@@ -1,9 +1,5 @@
-var button = document.getElementById("createRectangle")
+const canvas = document.querySelector('canvas');
+const ctx = canvas.getContext('2d');
 
-function createRectangle(){
-    
-}
-
-function deleteRectangle(){
-
-}
+ctx.fillStyle ="black";
+ctx.fillRect(0,0,150,75);

@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -34,6 +35,18 @@ public class RectanglesController {
         model.addAttribute("rec", rectangles);
         return "rectangle/showAll";
     }
+
+    @GetMapping(value = "/rectangle/viewone/{id}")
+    public String getById(@PathVariable("id") int rid, Model model) {
+        System.out.println(rid);
+        List<Rectangle> rectangle = rectangleRepo.findByrid(rid);
+
+        model.addAttribute("rec",rectangle);
+        return "rectangle/one";
+    }
+
+    
+    
 
     @PostMapping("/rectangle/add")
     public String addRectangle(@RequestParam Map<String, String> newrectangle, HttpServletResponse response) {
