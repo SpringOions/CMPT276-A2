@@ -17,8 +17,7 @@
                     <thead>
                         <th>name: </th>
                         <th>color: </th>
-                        <th>width: </th>
-                        <th>height: </th>
+                        <th></th>
                     </thead>
                     <tbody>
                         <tr th:each="rectangle:${rec}">
@@ -26,9 +25,11 @@
                                 <a th:text="${rectangle.name}" th:href="@{/rectangle/viewone/{id}(id=${rectangle.rid})}"></a>
                             </td>
                             <td th:text="${rectangle.color}"></td>
-                            <td th:text="${rectangle.width}"></td>
-                            <td th:text="${rectangle.width}"></td>
-                            
+                            <td>
+                                <a th:href="@{/rectangle/del/{id}(id=${rectangle.rid})}">
+                                    <button class="btn btn-primary" type="submit">Delete</button>
+                                </a>
+                            </td>                           
                         </tr>
                     </tbody>
                 </table>

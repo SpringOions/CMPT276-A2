@@ -62,5 +62,12 @@ public class RectanglesController {
         return "rectangle/addedRectangle";
     }
     
+    @GetMapping("/rectangle/del/{id}")
+    public String deleteRectangle(@PathVariable("id") int rid){
+
+        rectangleRepo.deleteById(rid);
+        return "rectangle/gone";
+    }
+    
     
 }
