@@ -1,7 +1,6 @@
 const rectangle = document.getElementById("rectangle_object");
 
 const color_picker = document.getElementById("color-picker");
-console.log(document.getElementById("color-picker"));
 
 //On colorpicker change, change display rectangle
 color_picker.addEventListener("change", function(ev){
@@ -14,9 +13,7 @@ document.getElementById("height").addEventListener("change", function(){
 })
 
 //on weight change change width of rectangle
-console.log(document.getElementById("weight"));
 document.getElementById("weight").addEventListener("change", function(){
-    console.log("output");
     rectangle.style.width = document.getElementById("weight").value + 'px';
 })
 

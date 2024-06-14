@@ -4,11 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/add.css">
+    <link rel="stylesheet" href="/css/mainstyle.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <script href="/js/display_singular.js" defer></script>
     <title>One Rectangle</title>
 </head>
 <body>
-    <div class="container-fluid">
+    <div class="container-fluid" id="container">
+        <div class="row justify-content-center">
+            <div id="img-holder" th:each="rectangle:${rec}">
+                
+            </div>
+            <div id="rectangle_container" class="row justify-content-center">
+                <div id="rectangle_object"></div>
+            </div>
+        </div>
         <div class="row justify-content-center">
             <div class="col-md-4" >
                 <h3>Name:</h3>
@@ -25,17 +35,17 @@
                
             </div>
             <div class="col-md-4" th:each="rectangle:${rec}">
-                <p th:text="${rectangle.name}"></p>
-                <p th:text="${rectangle.color}"></p>
-                <p th:text="${rectangle.width}"></p>
-                <p th:text="${rectangle.height}"></p>
-                <p th:text="${rectangle.chiikawa}"></p>
-                <p th:text="${rectangle.pattern}"></p>
+                <p th:text="${rectangle.name}" ></p>
+                <p th:text="${rectangle.color}" id="color"></p>
+                <p th:text="${rectangle.width}" id="width"></p>
+                <p th:text="${rectangle.height}" id="height"></p>
+                <p th:text="${rectangle.chiikawa}" id="chiikawa"></p>
+                <p th:text="${rectangle.pattern}" id="pattern"></p>
             </div>
             
         </div>
-        <div class="row justify-content-center">
-            <a href="/rectangle/view"><button class="btn btn-primary">Edit Rectangle</button></a>
+        <div class="row justify-content-center" th:each="rectangle:${rec}">
+            <a th:href="@{/rectangle/editRectangle/{id}(id=${rectangle.rid})}"><button class="btn btn-primary">Edit Rectangle</button></a>
             <a href="/rectangle/view"><button class="btn btn-primary">Return to homepage</button></a>
         </div>
 

@@ -1,9 +1,17 @@
-
+#rectangle_container{
+    width: 400px;
+    height: 400px;
+    border: #ADC178 5px dashed;
+    padding:50px;
+    background-color: white
+    ;
+}
 
 #rectangle_object{
     background-color: black;
     height: 40px;
     width: 60px;
+    margin:auto;
 }
 
 /* following css is sourced from: https://www.magicpattern.design/tools/css-backgrounds*/

@@ -13,11 +13,12 @@ body{
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-.container{
+#container{
     background-color: var(--light-green);
     border-radius: 15px;
     border: 5px dashed var(--green);
-    padding: 8px;
+    padding: 20px;
+    margin: 40px;
 }
 
 h1{
