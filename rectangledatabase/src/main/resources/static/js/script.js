@@ -1,5 +1,52 @@
-const canvas = document.querySelector('canvas');
-const ctx = canvas.getContext('2d');
+const rectangle = document.getElementById("rectangle_object");
 
-ctx.fillStyle ="black";
-ctx.fillRect(0,0,150,75);
+const color_picker = document.getElementById("color-picker");
+console.log(document.getElementById("color-picker"));
+
+//On colorpicker change, change display rectangle
+color_picker.addEventListener("change", function(ev){
+    rectangle.style.backgroundColor = color_picker.value;
+})
+
+//on height change. change height of display rectangle
+document.getElementById("height").addEventListener("change", function(){
+    rectangle.style.height = document.getElementById("height").value +'px';
+})
+
+//on weight change change width of rectangle
+console.log(document.getElementById("weight"));
+document.getElementById("weight").addEventListener("change", function(){
+    console.log("output");
+    rectangle.style.width = document.getElementById("weight").value + 'px';
+})
+
+document.getElementById("pattern").addEventListener("change", function(){
+    var cur_pattern = document.getElementById("pattern").value;
+    var patterns = rectangle.classList;
+
+    //if there are no existing classes or the none pattern class, add the new pattern
+    if (rectangle.classList.contains('None') || rectangle.classList.length==0){
+        rectangle.classList.remove('None')
+        rectangle.className += cur_pattern;
+    }
+    //if already contains a pattern, remove the existing pattern and replace it with the new selection
+    else{
+        patterns.forEach((pattern) => {
+            switch(pattern){
+                case "Striped":
+                    patterns.remove("Striped");
+                    break;
+                case "Dotted":
+                    patterns.remove("Dotted")
+                    break;
+                case "Triangles":
+                    patterns.remove("Triangles")
+                    break;
+                case "Checkered":
+                    patterns.remove("Checkered")
+                    break;
+            }
+        })
+        patterns.add(cur_pattern)
+    }  
+})
