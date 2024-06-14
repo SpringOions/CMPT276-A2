@@ -16,7 +16,7 @@
                 <h1>Your Rectangle:</h1>
                 <div class="row justify-content-center">
                     <div id="img-holder" th:each="rectangle:${rec}">
-                        <img th:src="@{/img/{chiikawa}.png(chiikawa=${rectangle.chiikawa})}">
+                        <img class="img-fluid" th:src="@{/img/{chiikawa}.png(chiikawa=${rectangle.chiikawa})}">
                     </div>
                     <div id="rectangle_container" class="row justify-content-center">
                         <div id="rectangle_object"></div>

@@ -5,6 +5,11 @@
     --dark-brown: #420C1C;
 }
 
+img{
+    max-height: 400px !important;
+    height:auto !important;
+}
+
 body{
     background-color:#F8FEF0 !important;
 }
