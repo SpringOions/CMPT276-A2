@@ -47,21 +47,27 @@ public class RectanglesController {
         return "rectangle/edit";
     }
 
-    @PutMapping("rectangle/{id}")
+    @PutMapping("/rectangle/{id}")
     public String updateRectangle(@PathVariable int id, @RequestParam Map<String, String> newRectangle, HttpServletResponse response, Model model) {
         //process PUT request
         Optional<Rectangle> updateRectangle = rectangleRepo.findById(id);
-
         try{
             if(updateRectangle.isPresent()){
                 Rectangle rectangle = updateRectangle.get();
 
-                rectangle.setName(newRectangle.get("name"));
-                rectangle.setColor(newRectangle.get("color"));
-                rectangle.setHeight(Integer.parseInt(newRectangle.get("height")));
-                rectangle.setWidth(Integer.parseInt(newRectangle.get("width")));
-                rectangle.setChiikawa(newRectangle.get("chiikawa"));
-                rectangle.setPattern(newRectangle.get("pattern"));
+                String newName = newRectangle.get("name");
+                String newColor = newRectangle.get("color");
+                int newHeight = Integer.parseInt(newRectangle.get("height"));
+                int newWeight = Integer.parseInt(newRectangle.get("weight"));
+                String newChiikawa = newRectangle.get("chiikawa");
+                String newPattern = newRectangle.get("pattern");
+
+                rectangle.setName(newName);
+                rectangle.setColor(newColor);
+                rectangle.setHeight(newHeight);
+                rectangle.setWidth(newWeight);
+                rectangle.setChiikawa(newChiikawa);
+                rectangle.setPattern(newPattern);
 
                 rectangleRepo.save(rectangle);
                 }

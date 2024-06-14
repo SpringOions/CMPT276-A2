@@ -1,10 +1,14 @@
-#rectangle_container{
+#rectangle_container, #img-holder{
     width: 400px;
     height: 400px;
     border: #ADC178 5px dashed;
     padding:50px;
     background-color: white
     ;
+}
+
+#img-holder{
+    margin-right:50px
 }
 
 #rectangle_object{
