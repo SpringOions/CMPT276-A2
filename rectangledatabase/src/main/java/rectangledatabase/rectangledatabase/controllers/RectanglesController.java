@@ -79,7 +79,7 @@ public class RectanglesController {
             return "rectangle/errorpage";
         }
         response.setStatus(201);
-        return "rectangle/success";
+        return "rectangle/viewone/{id}";
     }
 
 
